@@ -1,0 +1,34 @@
+<div class="header">
+  <h3>current weather</h3>
+  <p>{{getDate(todayWeather.dt)}}</p>
+</div>
+<div class="main">
+
+  <div class="weather-description">
+    <img src="{{getImg(todayWeather.weather[0].icon)}}" alt="">
+    <p>{{todayWeather.weather[0].description}}</p>
+  </div>
+
+  <div class="temperature">
+    <p class="bix-text">{{getTemperature(todayWeather.main.temp)}}&#176;C</p>
+    <p class="small-text">Feels like {{getTemperature(todayWeather.main.feels_like)}}&#176;C</p>
+  </div>
+
+
+
+  <div class="sun-rise">
+    <div class="sun-rise-info">
+      <p>Sunrise:</p>
+      <p>{{calculateSunriseSunset(todayWeather.sys.sunrise)}}</p>
+    </div>
+    <div class="sun-rise-info">
+      <p>Sunset:</p>
+      <p>{{calculateSunriseSunset(todayWeather.sys.sunset)}}</p>
+    </div>
+    <div class="sun-rise-info">
+      <p>Duration:</p>
+      <p>{{calculateSunriseDuration(todayWeather.sys.sunset - todayWeather.sys.sunrise)}}</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+ <div class="one-day-container"
+      *ngFor="let day of fiveDayWeatherList"
+      (click)="getHourlyWeather(fiveDayWeather.list, hourlyWeatherDaysList, day)">
+    <p>{{getDate(day.dt)}}</p>
+    <div class="img-container">
+      <img src="{{getImg(day.weather[0].icon)}}" alt="">
+    </div>
+    <p>{{getTemperature(day.main.temp)}}&#176;C</p>
+    <p class="lower-text">Feels like {{getTemperature(day.main.feels_like)}}&#176;C</p>
+    <p class="lower-text">{{day.weather[0].description}}</p>
+  </div>
+

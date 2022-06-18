@@ -1,0 +1,11 @@
+<div
+  class="one-hour-container"
+  *ngFor="let hour of hourlyWeatherList">
+  <p>{{getTime(hour)}}</p>
+  <div class="img-container">
+    <img src="{{getImg(hour.weather[0].icon)}}" alt="">
+  </div>
+  <p>{{getTemperature(hour.main.temp)}}&#176;C</p>
+  <p class="lower-text">Feels like {{getTemperature(hour.main.feels_like)}}&#176;C</p>
+  <p class="lower-text">{{hour.weather[0].description}}</p>
+</div>
